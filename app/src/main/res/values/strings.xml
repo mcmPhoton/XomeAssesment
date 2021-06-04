@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">XomeAssesment</string>
+    <string name="no_data_found">No Data Found</string>
+    <string name="search">Enter the Keyword to search</string>
+</resources>
