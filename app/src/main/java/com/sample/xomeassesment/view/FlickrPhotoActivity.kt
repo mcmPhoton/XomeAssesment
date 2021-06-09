@@ -1,20 +1,19 @@
 package com.sample.xomeassesment.view
 
-import android.os.Build
 import android.os.Bundle
 import android.widget.SearchView
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.observe
+import com.sample.xomeassesment.NetworkUtil
 import com.sample.xomeassesment.R
 import com.sample.xomeassesment.databinding.ActivityMainBinding
-import com.sample.xomeassesment.isNetworkAvailable
 import com.sample.xomeassesment.viewmodel.FlickrPhotoViewModel
 
 class FlickrPhotoActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
+    var networkUtil: NetworkUtil = NetworkUtil()
     var flickrPhotoViewModel: FlickrPhotoViewModel = FlickrPhotoViewModel()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,9 +32,8 @@ class FlickrPhotoActivity : AppCompatActivity() {
         })
     }
 
-    @RequiresApi(Build.VERSION_CODES.M)
     fun getData(name: String) {
-        if (isNetworkAvailable(this)) {
+        if (networkUtil.isNetworkAvailable(this)) {
             flickrPhotoViewModel.getSearchImages(name).observe(
                 this,
                 {

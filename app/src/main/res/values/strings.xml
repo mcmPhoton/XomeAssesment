@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">XomeAssesment</string>
+    <string name="app_name">Xome\nAssesment</string>
     <string name="no_data_found">No Data Found</string>
     <string name="search">Enter the Keyword to search</string>
     <string name="network_issue">Network not available</string>
